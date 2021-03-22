@@ -18,7 +18,53 @@
       {{recent_activity}}
     {{/if}}
   </section>
-  
+
+  <section class="section knowledge-base">
+   <section class="categories blocks">
+     {{#each categories}}
+       <div class="container content">
+       <div class="section-container">
+         <section class="section-content">
+           <header class="page-header">
+             <h1>
+               {{name}}
+             </h1>
+
+             {{#if description}}
+               <p class="page-header-description">{{description}}</p>
+             {{/if}}
+           </header>
+         {{#each sections}}
+
+         <h2 style="text-align: left;margin-top: 50px;">
+<!--小カテゴリー-->
+           {{name}}
+         </h2>
+
+               {{#if articles}}
+                 <ul class="article-list">
+                   {{#each articles}}
+                     <li class="article-list-item {{#if promoted}} article-promoted{{/if}}">
+                       {{#if promoted}}
+                         <span data-title="{{t 'promoted'}}" class="icon-star"></span>
+                       {{/if}}
+                       <a href="{{url}}" class="article-list-link">{{title}}</a>
+                     </li>
+                   {{/each}}
+                 </ul>
+               {{else}}
+                 <i class="section-empty">
+                   <a href="{{url}}">{{t 'empty'}}</a>
+                 </i>
+               {{/if}}
+         {{/each}}
+         </section>
+       </div>
+       </div>
+     {{/each}}
+   </section>
+ </section>
+  <!--
   <section class="section knowledge-base">
     <h2 class="visibility-hidden">{{ t 'categories' }}</h2>
     <section class="categories blocks">
@@ -69,7 +115,7 @@
         </ul>
       </section>
     {{/if}}
-  </section>
+  </section> -->
 
   {{#if help_center.community_enabled}}
     <section class="section home-section community">
