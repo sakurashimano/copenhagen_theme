@@ -1,68 +1,71 @@
 <h1 class="visibility-hidden">{{ help_center.name }}</h1>
 
 <section id="main-content" class="section hero">
+  <a class="hero-tittle" href="https://autok.io/biz/lp">オートークビズ ヘルプページ</a>
   <div class="hero-inner">
     <h2 class="visibility-hidden">{{ t 'search' }}</h2>
-    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="search-icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="search-icon" aria-hidden="true">
       <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor"/>
       <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5"/>
-    </svg> -->
+    </svg>
     {{search submit=false instant=settings.instant_search class='search search-full'}}
   </div>
 </section>
 
 <div class="container">
-
   <section class="section home-section activity">
     {{#if settings.show_recent_activity}}
       {{recent_activity}}
     {{/if}}
   </section>
 
-  <section class="section knowledge-base">
-   <section class="categories blocks">
-     {{#each categories}}
-       <div class="container content">
-       <div class="section-container">
-         <section class="section-content">
-           <header class="page-header">
-             <h1>
-               {{name}}
-             </h1>
+  <section class="categories blocks">
+    {{#each categories}}
+      <div class="content">
+        <section class="section-content">
+          <header class="page-">
+            <p class="home_each_tittle">
+              {{name}}
+            </p>
 
-             {{#if description}}
-               <p class="page-header-description">{{description}}</p>
-             {{/if}}
-           </header>
-         {{#each sections}}
+            {{#if description}}
+              <p class="page-header-description">{{description}}</p>
+            {{/if}}
+          </header>
+        {{#each sections}}
 
-         <h2 style="text-align: left;margin-top: 50px;">
+        <h2 style="text-align: left;margin-top: 50px;">
 <!--小カテゴリー-->
-           {{name}}
-         </h2>
+          <!-- {{name}} -->
+        </h2>
+        <!-- 記事のタイトル -->
+              {{#if articles}}
+                <ul class="article-list">
+                  {{#each articles}}
+                    <li class="article-list-item {{#if promoted}} article-promoted{{/if}}">
+                      {{#if promoted}}
+                        <span data-title="{{t 'promoted'}}" class="icon-star"></span>
+                      {{/if}}
+                      <a href="{{url}}" class="article-list-link">{{title}}</a>
+                    </li>
+                  {{/each}}
+                </ul>
+              {{else}}
+                <i class="section-empty">
+                  <a href="{{url}}">{{t 'empty'}}</a>
+                </i>
+              {{/if}}
+        {{/each}}
+        </section>
+      <!-- <div class="section-container">
 
-               {{#if articles}}
-                 <ul class="article-list">
-                   {{#each articles}}
-                     <li class="article-list-item {{#if promoted}} article-promoted{{/if}}">
-                       {{#if promoted}}
-                         <span data-title="{{t 'promoted'}}" class="icon-star"></span>
-                       {{/if}}
-                       <a href="{{url}}" class="article-list-link">{{title}}</a>
-                     </li>
-                   {{/each}}
-                 </ul>
-               {{else}}
-                 <i class="section-empty">
-                   <a href="{{url}}">{{t 'empty'}}</a>
-                 </i>
-               {{/if}}
-         {{/each}}
-         </section>
-       </div>
-       </div>
-     {{/each}}
-   </section>
+      </div> -->
+      </div>
+    {{/each}}
+  </section>
+
+  <section class="section parent">
+
  </section>
   <!--
   <section class="section knowledge-base">
@@ -116,7 +119,7 @@
       </section>
     {{/if}}
   </section> -->
-
+<!--
   {{#if help_center.community_enabled}}
     <section class="section home-section community">
       <h2>{{t 'community'}}</h2>
@@ -126,7 +129,7 @@
 
       <div class="community-image"></div>
     </section>
-  {{/if}}
+  {{/if}} -->
 
 
 </div>
