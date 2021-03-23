@@ -34,7 +34,7 @@
           "type": "color",
           "description": "link_color_description",
           "label": "link_color_label",
-          "value": "#1F73B7"
+          "value": "#1FA5FF"
         },
         {
           "identifier": "visited_link_color",
