@@ -1,7 +1,7 @@
 <h1 class="visibility-hidden">{{ help_center.name }}</h1>
 
 <section id="main-content" class="section hero">
-  <a class="hero-tittle" href="https://autok.io/biz/lp">オートークビズ ヘルプページ</a>
+  <a class="hero-tittle" href="https://regulus-technologies.zendesk.com/hc/ja">オートークビズ ヘルプページ</a>
   <div class="hero-inner">
     <h2 class="visibility-hidden">{{ t 'search' }}</h2>
     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="search-icon" aria-hidden="true">
@@ -13,60 +13,95 @@
 </section>
 
 <div class="container">
-  <section class="section home-section activity">
-    {{#if settings.show_recent_activity}}
-      {{recent_activity}}
-    {{/if}}
-  </section>
+
+  <div class="border-bottom">
+    <section class="section home-section activity">
+      {{#if settings.show_recent_activity}}
+        {{recent_activity}}
+      {{/if}}
+    </section>
+  </div>
 
   <section class="categories blocks">
-    {{#each categories}}
       <div class="content">
         <section class="section-content">
-          <header class="page-">
-            <p class="home_each_tittle">
-              {{name}}
-            </p>
-
-            {{#if description}}
-              <p class="page-header-description">{{description}}</p>
-            {{/if}}
+          <header class="each_tittle_outer">
+            <a class="home_each_tittle" href="https://regulus-technologies.zendesk.com/hc/ja/categories/115000459314-%E5%88%9D%E3%82%81%E3%81%A6%E3%81%AE%E6%96%B9%E3%81%AB">初めての方に</a>
           </header>
-        {{#each sections}}
-
-        <h2 style="text-align: left;margin-top: 50px;">
-<!--小カテゴリー-->
-          <!-- {{name}} -->
-        </h2>
-        <!-- 記事のタイトル -->
-              {{#if articles}}
+<!-- 記事 -->
                 <ul class="article-list">
-                  {{#each articles}}
-                    <li class="article-list-item {{#if promoted}} article-promoted{{/if}}">
-                      {{#if promoted}}
-                        <span data-title="{{t 'promoted'}}" class="icon-star"></span>
-                      {{/if}}
-                      <a href="{{url}}" class="article-list-link">{{title}}</a>
+                    <li class="article-list-item">
+                      <a href="https://regulus-technologies.zendesk.com/hc/ja/articles/115000589893-30%E7%A7%92%E3%81%A7%E3%82%8F%E3%81%8B%E3%82%8B%E3%83%95%E3%82%A1%E3%83%BC%E3%82%B9%E3%83%88%E3%82%AC%E3%82%A4%E3%83%89" class="article-list-link">30秒でわかるファーストガイド</a>
                     </li>
-                  {{/each}}
+                    <li class="article-list-item">
+                      <a href="https://regulus-technologies.zendesk.com/hc/ja/articles/900000180906-%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%88%E3%82%AC%E3%82%A4%E3%83%89-%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3%E3%81%97%E3%82%88%E3%81%86-" class="article-list-link">スタートガイド①：ログインしよう！</a>
+                    </li>
+                    <li class="article-list-item">
+                      <a href="https://regulus-technologies.zendesk.com/hc/ja/articles/900000180926-%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%88%E3%82%AC%E3%82%A4%E3%83%89-%E4%BC%9A%E7%A4%BE%E7%AE%A1%E7%90%86%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%92%E3%81%BF%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86" class="article-list-link">スタートガイド②：会社管理メニューをみてみよう</a>
+                    </li>
                 </ul>
-              {{else}}
-                <i class="section-empty">
-                  <a href="{{url}}">{{t 'empty'}}</a>
-                </i>
-              {{/if}}
-        {{/each}}
+                <a href="https://regulus-technologies.zendesk.com/hc/ja/categories/115000459314-%E5%88%9D%E3%82%81%E3%81%A6%E3%81%AE%E6%96%B9%E3%81%AB">全ての記事を見る</a>
         </section>
-      <!-- <div class="section-container">
-
-      </div> -->
       </div>
-    {{/each}}
+
+      <div class="content">
+        <section class="section-content">
+          <header class="each_tittle_outer">
+            <a class="home_each_tittle" href="https://regulus-technologies.zendesk.com/hc/ja/categories/360000054961-%E6%A9%9F%E8%83%BD%E3%81%94%E3%81%A8">機能ごと</a>
+          </header>
+<!-- 記事 -->
+                <ul class="article-list">
+                    <li class="article-list-item">
+                      <a href="https://regulus-technologies.zendesk.com/hc/ja/articles/900000081583-Google%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%E3%81%A7%E3%81%AE%E6%97%A5%E7%A8%8B%E8%AA%BF%E6%95%B4%E6%96%B9%E6%B3%95-%E3%82%B7%E3%83%B3%E3%82%B0%E3%83%AB%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC%E6%8E%A1%E7%94%A8%E7%AE%A1%E7%90%86%E7%B7%A8-" class="article-list-link">Googleカレンダーでの日程調整方法（シングルカレンダー採用管理編）</a>
+                    </li>
+                    <li class="article-list-item">
+                      <a href="https://regulus-technologies.zendesk.com/hc/ja/articles/360000261802-%E5%AA%92%E4%BD%93%E9%80%A3%E6%90%BA%E3%81%AE%E5%BA%97%E8%88%97%E7%B4%90%E4%BB%98%E3%81%91%E8%A8%AD%E5%AE%9A" class="article-list-link">媒体連携の店舗紐付け設定</a>
+                    </li>
+                    <li class="article-list-item">
+                      <a href="https://regulus-technologies.zendesk.com/hc/ja/articles/360006174494-%E8%87%AA%E5%8B%95%E3%83%A2%E3%83%BC%E3%83%89%E8%A8%AD%E5%AE%9A" class="article-list-link">自動モード設定</a>
+                    </li>
+                </ul>
+                <a href="https://regulus-technologies.zendesk.com/hc/ja/categories/360000054961-%E6%A9%9F%E8%83%BD%E3%81%94%E3%81%A8">全ての記事を見る</a>
+        </section>
+      </div>
+
+      <div class="content">
+        <section class="section-content">
+          <header class="each_tittle_outer">
+            <a class="home_each_tittle" href="https://regulus-technologies.zendesk.com/hc/ja/categories/360000054941-%E6%96%99%E9%87%91-%E5%A5%91%E7%B4%84%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">料金・契約について</a>
+          </header>
+<!-- 記事 -->
+                <ul class="article-list">
+                    <li class="article-list-item">
+                      <a href="https://regulus-technologies.zendesk.com/hc/ja/articles/900001781303-%E6%96%B0%E3%81%97%E3%81%84%E3%83%97%E3%83%A9%E3%83%B3%E3%81%AE%E3%81%94%E6%8F%90%E4%BE%9B%E3%82%92%E9%96%8B%E5%A7%8B%E3%81%84%E3%81%9F%E3%81%97%E3%81%BE%E3%81%99-" class="article-list-link">新しいプランのご提供を開始いたします。</a>
+                    </li>
+                    <li class="article-list-item">
+                      <a href="https://regulus-technologies.zendesk.com/hc/ja/articles/115002538854-%E5%BF%9C%E5%8B%9F%E5%AF%BE%E5%BF%9C%E6%95%B0%E3%81%8C%E3%83%97%E3%83%A9%E3%83%B3%E3%81%AE%E4%B8%8A%E9%99%90%E3%82%92%E8%B6%85%E3%81%88%E3%81%A6%E3%81%97%E3%81%BE%E3%81%A3%E3%81%9F%E3%82%89-" class="article-list-link">応募対応数がプランの上限を超えてしまったら？</a>
+                    </li>
+                    <li class="article-list-item">
+                      <a href="https://regulus-technologies.zendesk.com/hc/ja/articles/115002538354-%E3%83%88%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%AB%E3%81%8C%E7%B5%82%E4%BA%86%E3%81%97%E3%81%A6%E3%81%97%E3%81%BE%E3%81%A3%E3%81%9F%E3%82%89-" class="article-list-link">トライアルが終了してしまったら？</a>
+                    </li>
+                </ul>
+                <a href="https://regulus-technologies.zendesk.com/hc/ja/categories/360000054941-%E6%96%99%E9%87%91-%E5%A5%91%E7%B4%84%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">全ての記事を見る</a>
+        </section>
+      </div>
+
+      <div class="content">
+        <section class="section-content">
+          <header class="each_tittle_outer">
+            <a class="home_each_tittle" href="https://regulus-technologies.zendesk.com/hc/ja/categories/360000055562-%E3%82%88%E3%81%8F%E3%81%82%E3%82%8B%E8%B3%AA%E5%95%8F">よくある質問</a>
+          </header>
+<!-- 記事 -->
+                <ul class="article-list">
+                    <li class="article-list-item">
+                      <a href="https://regulus-technologies.zendesk.com/hc/ja/articles/115002538914-%E9%9D%A2%E6%8E%A5%E8%A8%AD%E5%AE%9A%E6%95%B0%E3%81%A8%E3%81%AF%E4%BD%95%E3%81%A7%E3%81%99%E3%81%8B-" class="article-list-link">面接設定数とは何ですか？</a>
+                    </li>
+                </ul>
+                <a href="https://regulus-technologies.zendesk.com/hc/ja/categories/360000055562-%E3%82%88%E3%81%8F%E3%81%82%E3%82%8B%E8%B3%AA%E5%95%8F">全ての記事を見る</a>
+        </section>
+      </div>
+
   </section>
-
-  <section class="section parent">
-
- </section>
   <!--
   <section class="section knowledge-base">
     <h2 class="visibility-hidden">{{ t 'categories' }}</h2>
