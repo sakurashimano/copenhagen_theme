@@ -328,6 +328,7 @@ textarea:focus {
 .container-divider {
   border-top: 1px solid #ddd;
   margin-bottom: 20px;
+  margin-top: 0;
 }
 
 ul {
@@ -666,7 +667,7 @@ ul {
   display: flex;
   height: 71px;
   justify-content: space-between;
-  background: #1FA5FF;
+  background: #fff;
 }
 .header_inside {
   display: flex;
@@ -688,12 +689,14 @@ ul {
 }
 
 .help {
-  margin: 7px 0 0 5px;
+  margin: 12px 0 0 5px;
+  color: #41484D;
 }
 
 .logo img {
   max-height: 37px;
   vertical-align: middle;
+  width: 160px;
 }
 
 .logo span {
@@ -739,7 +742,7 @@ ul {
 
 .nav-wrapper a {
   border: 0;
-  color: #fff;
+  color: #41484D;
   display: none;
   font-size: 14px;
   padding: 0 20px 0 0;
@@ -982,7 +985,7 @@ ul {
 .breadcrumbs li {
   color: lighten($text_color, 20%);
   display: inline;
-  font-size: 13px;
+  font-size: 14px;
   max-width: 450px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1053,13 +1056,16 @@ ul {
 .hero {
   background-position: center;
   background-size: cover;
-  height: 260px;
-  padding: 48px 20px 0 ;
   text-align: center;
   width: 100%;
-  background: #1FA5FF;
+  background: #F5EDE6;
   margin-bottom: 80px;
-
+  position: relative;
+  background-image: url("../settings/background-plancolor.svg");
+  background-position: center;
+  background-size: cover;
+  padding: 64px 0 24px;
+  height: 310px;
 }
 
 .hero-inner {
@@ -1070,10 +1076,24 @@ ul {
   margin: 0 auto;
 }
 
+/* autokunは今の所非表示 */
+/* .autokun {
+  width: 180px;
+  position: absolute;
+  left: 10%;
+  bottom: 0;
+}
+@media (max-width: 1100px) {
+  .autokun {
+    width: 160px;
+    left: 0;
+  }
+} */
+
 .hero-tittle {
   margin: 0 auto;
   text-align: center;
-  color: #fff;
+  color: #41484D;
   font-size: 32px;
   font-weight: bold;
 }
@@ -1394,7 +1414,7 @@ ul {
   text-align: center;
   font-size: 24px;
   font-weight: bold;
-  color: #2E393D;
+  color: #41484D;
 }
 
 
@@ -1424,11 +1444,11 @@ ul.recent-activity-list>li:nth-child(n+4) {
   width: 100%;
 }
 
-.recent-activity-item-link:hover{
+/* .recent-activity-item-link:hover{
   text-decoration: none;
   border-bottom: 1px solid #2F3941;
   width: fit-content;
-}
+} */
 
 @media (min-width: 768px) {
 .recent-activity-item-link {
@@ -1618,7 +1638,7 @@ ul.recent-activity-list>li:nth-child(n+4) {
   flex: 0 0 45%;
 }
 .home_each_tittle {
-  color: #2F3941;
+  color: #41484D;
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 32px;
@@ -1951,8 +1971,8 @@ ul.recent-activity-list>li:nth-child(n+4) {
   border-radius: 4px;
   color: $text_color;
   display: block;
-  margin-bottom: 10px;
-  padding: 10px;
+  margin-bottom: 8px;
+  padding: 8px;
 }
 
 .sidenav-item.current-article, .sidenav-item:hover {
