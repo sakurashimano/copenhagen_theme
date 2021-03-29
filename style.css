@@ -946,6 +946,10 @@ ul {
   padding: 30px 0;
 }
 
+.autok-footer {
+  width: 200px;
+}
+
 .footer a {
   color: lighten($text_color, 20%);
 }
