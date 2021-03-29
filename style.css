@@ -1291,6 +1291,7 @@ ul {
 @media (max-width: 768px) {
   .categories {
     margin-top: 32px;
+    display: block;
   }
 }
 
