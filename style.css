@@ -190,10 +190,16 @@ body {
   background-color: $background_color;
   color: $text_color;
   font-family: $text_font;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
+@media (max-width: 768px) {
+  BODY {
+    font-size: 14px;
+  }
+}
+
 
 @media (min-width: 1024px) {
   body > main {
@@ -208,6 +214,11 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 32px;
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 20px;
+  }
 }
 
 h2 {
@@ -291,21 +302,33 @@ textarea:focus {
 }
 
 .container {
-  max-width: 1160px;
+  max-width: 80%;
   margin: 0 auto;
-  padding: 0 5%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+.border-bottom {
+  border-bottom: 1px solid #ddd;
+  width: 100%;
 }
 
 @media (min-width: 1160px) {
   .container {
-    padding: 0;
     width: 90%;
+    margin: 0 auto;
+    flex: 0 0 45%;
   }
 }
 
 .container-divider {
   border-top: 1px solid #ddd;
   margin-bottom: 20px;
+  margin-top: 0;
 }
 
 ul {
@@ -637,7 +660,6 @@ ul {
 
 /***** Header *****/
 .header {
-  max-width: 1160px;
   margin: 0 auto;
   padding: 0 5%;
   position: relative;
@@ -645,18 +667,36 @@ ul {
   display: flex;
   height: 71px;
   justify-content: space-between;
+  background: #fff;
 }
-
+.header_inside {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: auto;
+  align-items: baseline;
+  width: 90%;
+}
 @media (min-width: 1160px) {
   .header {
     padding: 0;
-    width: 90%;
   }
+}
+.logo {
+  display: flex;
+  color: #fff;
+  vertical-align: baseline;
+}
+
+.help {
+  margin: 12px 0 0 5px;
+  color: #41484D;
 }
 
 .logo img {
   max-height: 37px;
   vertical-align: middle;
+  width: 160px;
 }
 
 .logo span {
@@ -676,6 +716,7 @@ ul {
   display: inline-block;
   position: absolute;
   white-space: nowrap;
+  color: #fff;
 }
 
 @media (min-width: 768px) {
@@ -701,7 +742,7 @@ ul {
 
 .nav-wrapper a {
   border: 0;
-  color: $link_color;
+  color: #41484D;
   display: none;
   font-size: 14px;
   padding: 0 20px 0 0;
@@ -905,6 +946,10 @@ ul {
   padding: 30px 0;
 }
 
+.autok-footer {
+  width: 200px;
+}
+
 .footer a {
   color: lighten($text_color, 20%);
 }
@@ -944,7 +989,7 @@ ul {
 .breadcrumbs li {
   color: lighten($text_color, 20%);
   display: inline;
-  font-size: 13px;
+  font-size: 14px;
   max-width: 450px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -982,7 +1027,7 @@ ul {
 }
 
 .search input[type="search"]:focus {
-  border: 1px solid $brand_color;
+  border: 1px solid #1FA5FF;
   color: #555;
 }
 
@@ -1013,21 +1058,56 @@ ul {
 
 /***** Hero component *****/
 .hero {
-  background-image: url($homepage_background_image);
   background-position: center;
   background-size: cover;
-  height: 300px;
-  padding: 0 20px;
   text-align: center;
   width: 100%;
+  background: #F5EDE6;
+  margin-bottom: 80px;
+  position: relative;
+  background-image: url("../settings/background-plancolor.svg");
+  background-position: center;
+  background-size: cover;
+  padding: 64px 0 24px;
+  height: 310px;
 }
 
 .hero-inner {
   position: relative;
-  top: 50%;
+  top: 30%;
   transform: translateY(-50%);
   max-width: 610px;
   margin: 0 auto;
+}
+
+/* autokunは今の所非表示 */
+/* .autokun {
+  width: 180px;
+  position: absolute;
+  left: 10%;
+  bottom: 0;
+}
+@media (max-width: 1100px) {
+  .autokun {
+    width: 160px;
+    left: 0;
+  }
+} */
+
+.hero-tittle {
+  margin: 0 auto;
+  text-align: center;
+  color: #41484D;
+  font-size: 32px;
+  font-weight: bold;
+}
+.hero-tittle:hover{
+  text-decoration: none;
+}
+@media (max-width: 768px) {
+  .hero-tittle {
+    font-size: 20px;
+  }
 }
 
 .page-header {
@@ -1204,6 +1284,33 @@ ul {
 .section {
   margin-bottom: 40px;
 }
+.categories {
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+  .categories {
+    margin-top: 32px;
+    display: block;
+  }
+}
+
+.content {
+  flex: 0 0 45%;
+  margin-bottom: 80px;
+}
+@media (max-width: 768px) {
+  .content {
+    max-width: 90%;
+    margin: 0 auto;
+    flex: auto;
+    margin-top: 40px;
+  }
+}
 
 @media (min-width: 768px) {
   .section {
@@ -1287,46 +1394,71 @@ ul {
 
 .community,
 .activity {
-  border-top: 1px solid #ddd;
-  padding: 30px 0;
+  padding: 0 0 30px 0;
+  max-width: 660px;
+  margin: 0 auto;
 }
 
 /***** Recent activity *****/
+@media (max-width: 768px) {
+  .recent-activity{
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
 .recent-activity-header {
   margin-bottom: 10px;
   text-align: center;
+  display: none;
 }
+
+.activity-tittle {
+  padding: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #41484D;
+}
+
 
 .recent-activity-list {
   padding: 0;
 }
 
+ul.recent-activity-list>li:nth-child(n+4) {
+ display: none;
+}
+
 .recent-activity-item {
   border-bottom: 1px solid #ddd;
   overflow: auto;
-  padding: 20px 0;
+  padding: 13px 0;
 }
 
 .recent-activity-item-parent {
-  font-size: 16px;
+  font-size: 0px;
+  display: none;
 }
 
-.recent-activity-item-parent, .recent-activity-item-link {
+.recent-activity-item-link {
   margin: 6px 0;
   color: $text_color;
   display: inline-block;
   width: 100%;
 }
 
+/* .recent-activity-item-link:hover{
+  text-decoration: none;
+  border-bottom: 1px solid #2F3941;
+  width: fit-content;
+} */
+
 @media (min-width: 768px) {
-  .recent-activity-item-parent, .recent-activity-item-link {
-    width: 70%;
+.recent-activity-item-link {
     margin: 0;
   }
-}
-
-.recent-activity-item-link {
-  font-size: 14px;
 }
 
 .recent-activity-item-meta {
@@ -1348,6 +1480,7 @@ ul {
   color: lighten($text_color, 20%);
   display: inline-block;
   font-size: 13px;
+  display: none;
 }
 
 .recent-activity-item-comment {
@@ -1363,7 +1496,16 @@ ul {
 }
 
 .recent-activity-controls {
-  padding-top: 15px;
+  padding: 12px 0;
+  border: 1px solid #1FA5FF;
+  border-radius: 4px;
+  margin-top: 18px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.data-recent-activity-seemore {
+  margin: 0 auto;
 }
 
 .recent-activity-accessibility-label {
@@ -1400,7 +1542,7 @@ ul {
 /***** Category pages *****/
 .category-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .category-content {
@@ -1418,13 +1560,14 @@ ul {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin: 0 auto;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .section-tree {
     flex-direction: row;
   }
-}
+} */
 
 .section-tree .section {
   flex: initial;
@@ -1445,6 +1588,13 @@ ul {
 
 .section-tree-title a {
   color: $text_color;
+  text-decoration: none;
+}
+
+.section-tree-title:hover {
+  border-bottom: 2px solid #1FA5FF;
+  text-decoration: none;
+  width: fit-content;
 }
 
 .section-tree .see-all-articles {
@@ -1453,12 +1603,28 @@ ul {
 }
 
 .article-list-item {
-  font-size: 16px;
-  padding: 15px 0;
+  padding: 12px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+@media (max-width: 768px) {
+  .article-list-item {
+    font-size: 14px;
+  }
 }
 
 .article-list-item a {
-  color: $text_color;
+  color: #1FA5FF;
+}
+
+.article-list-item a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid #1FA5FF;
+}
+
+
+.see-all {
+  margin-top: 12px;
 }
 
 .icon-star {
@@ -1469,11 +1635,32 @@ ul {
 /***** Section pages *****/
 .section-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .section-content {
-  flex: 1;
+  /* flex: 1; */
+  flex: 0 0 45%;
+}
+.home_each_tittle {
+  color: #41484D;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 32px;
+  margin-top: 0;
+}
+
+.home_each_tittle:hover{
+  border-bottom: 2px solid #1FA5FF;
+  text-decoration: none;
+  padding-bottom: -10px;
+}
+
+@media (max-width: 768px) {
+  .home_each_tittle{
+    margin-bottom: 8px;
+    font-size: 18px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -1530,6 +1717,7 @@ ul {
     max-width: 66%;
     min-width: 640px;
     padding: 0 30px;
+    margin: 0 auto;
   }
 }
 
@@ -1705,11 +1893,13 @@ ul {
   }
 }
 
+/* 最近表示した記事表示しない */
 .article-relatives {
   border-top: 1px solid #ddd;
   display: flex;
   flex-direction: column;
   padding: 20px 0;
+  display: none;
 }
 
 @media (min-width: 768px) {
@@ -1786,8 +1976,8 @@ ul {
   border-radius: 4px;
   color: $text_color;
   display: block;
-  margin-bottom: 10px;
-  padding: 10px;
+  margin-bottom: 8px;
+  padding: 8px;
 }
 
 .sidenav-item.current-article, .sidenav-item:hover {
@@ -1796,8 +1986,11 @@ ul {
   text-decoration: none;
 }
 
-.recent-articles li,
-.related-articles li {
+/* 関連記事表示しない */
+.related-articles {
+  display: none;
+}
+.recent-articles li,{
   margin-bottom: 15px;
 }
 
