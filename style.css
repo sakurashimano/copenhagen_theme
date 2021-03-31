@@ -1027,7 +1027,7 @@ ul {
 }
 
 .search input[type="search"]:focus {
-  /* border: 1px solid $brand_color; */
+  border: 1px solid #1FA5FF;
   color: #555;
 }
 
